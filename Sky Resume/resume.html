@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Build your professional resume with Sky Resume. 30+ premium templates, live preview, and PDF download. No login required.">
+<meta name="keywords" content="build resume, create CV, professional resume builder, ATS-friendly CV, Sky Resume templates">
+<title>Sky Resume Builder | Create Resume Online</title>
+
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="templates.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <header class="tesla-header">
+        <div class="logo">SKY <span>RESUME</span></div>
+        <nav class="stepper">
+            <div class="step active" data-step="1">Style</div>
+            <div class="step" data-step="2">Bio</div>
+            <div class="step" data-step="3">Work</div>
+            <div class="step" data-step="4">Study</div>
+            <div class="step" data-step="5">Skills</div>
+            <div class="step" data-step="6">Finish</div>
+        </nav>
+    </header>
+
+    <main class="builder-container">
+        <!-- Form Side -->
+        <section class="form-side">
+            
+            <!-- Step 1: Templates -->
+            <div class="step-content active" id="step-1">
+                <h2>Choose Design Style</h2>
+                <div class="template-grid">
+                    <div class="template-card active" data-template="modern">
+                        <div class="template-thumb">MODERN</div>
+                        <p>Standard Professional</p>
+                    </div>
+                    <div class="template-card" data-template="corporate">
+                        <div class="template-thumb" style="background: #2c3e50; color: white;">CORP</div>
+                        <p>Executive Style</p>
+                    </div>
+                    <div class="template-card" data-template="creative">
+                        <div class="template-thumb" style="border: 2px solid #FF5F1F;">CRAETIVE</div>
+                        <p>Portfolio Look</p>
+                    </div>
+                    <div class="template-card" data-template="ats">
+                        <div class="template-thumb" style="background: white; border: 1px solid #ddd;">ATS</div>
+                        <p>Bot-Friendly</p>
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <!-- Step 2: Personal -->
+            <div class="step-content" id="step-2">
+                <h2>Personal Details</h2>
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="in-name" placeholder="Elon Musk" data-sync="name">
+                </div>
+                <div class="input-group">
+                    <label>Job Title</label>
+                    <input type="text" id="in-title" placeholder="Architect" data-sync="title">
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="in-email" placeholder="name@domain.com" data-sync="email">
+                </div>
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="in-phone" placeholder="+1 234 567 890" data-sync="phone">
+                </div>
+                <div class="input-group">
+                    <label>About Me</label>
+                    <textarea id="in-summary" placeholder="A brief summary of your expertise..." data-sync="summary"></textarea>
+                </div>
+            </div>
+
+            <!-- Step 3: Experience -->
+            <div class="step-content" id="step-3">
+                <h2>Work Experience</h2>
+                <div id="experience-list"></div>
+                <button id="add-xp" class="add-btn">+ Add Position</button>
+            </div>
+
+            <!-- Step 4: Education -->
+            <div class="step-content" id="step-4">
+                <h2>Education</h2>
+                <div id="education-list"></div>
+                <button id="add-edu" class="add-btn">+ Add Education</button>
+            </div>
+
+            <!-- Step 5: Skills -->
+            <div class="step-content" id="step-5">
+                <h2>Skills & Tools</h2>
+                <div class="input-group">
+                    <label>Skills (Comma separated)</label>
+                    <textarea id="in-skills" placeholder="JavaScript, Project Management, Figma, Python..."></textarea>
+                </div>
+            </div>
+
+            <!-- Step 6: Download -->
+            <div class="step-content" id="step-6">
+                <h2>Finish Building</h2>
+                <p>Your resume is ready. You can now download it as a high-quality PDF..</p>
+                <div style="margin-top: 20px; padding: 20px; background: rgba(255, 95, 31, 0.05); border-radius: 8px;">
+                    
+                </div>
+            </div>
+
+            <div class="navigation-btns">
+                <button id="prevBtn" class="secondary" disabled>Back</button>
+                <button id="nextBtn" class="primary">Next Step</button>
+            </div>
+        </section>
+
+        <!-- Preview Side -->
+        <section class="preview-side">
+            <div id="resume-preview" class="modern-template">
+                <div class="watermark">SKY RESUME FREE</div>
+                
+                <div class="resume-header">
+                    <h1 id="pv-name">Sky Web</h1>
+                    <div class="subtitle" id="pv-title">Chief Engineer</div>
+                    <div class="contact">
+                        <span id="pv-email">ur@gmail.com</span> | <span id="pv-phone">+1 999 000 111</span>
+                    </div>
+                </div>
+
+                <div class="resume-body">
+                    <div class="section-title">Summary</div>
+                    <p id="pv-summary">Visionary leader focused on accelerating the world's transition to sustainable energy.</p>
+                    
+                    <div id="pv-experience"></div>
+                    <div id="pv-education"></div>
+                    <div id="pv-skills"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9844642861086635"
+     crossorigin="anonymous"></script>
+<!-- Home Page Top Banner -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9844642861086635"
+     data-ad-slot="6904751162"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <h3>Download Premium CV</h3>
+            <p>Remove the "SKY RESUME FREE" watermark and unlock executive designs</p>
+            <button id="pay-btn" class="pay-btn-real">Remove WaterMark</button>
+            <button class="close-modal">I'll stick to the free version</button>
+        </div>
+    </div>
+
+    <script src="builder.js"></script>
+    <script src="main.js"></script>
+    <script src="export.js"></script>
+    <script src="payment.js"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9844642861086635"
+     crossorigin="anonymous"></script>
+<!-- Home Page Top Banner -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9844642861086635"
+     data-ad-slot="6904751162"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</body>
+</html>

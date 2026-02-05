@@ -1,0 +1,327 @@
+:root {
+    --tesla-orange: #FF5F1F;
+    --tesla-white: #FFFFFF;
+    --tesla-dark: #171a20;
+    --grey-bg: #f8f9fa;
+    --border-color: #e2e2e2;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--tesla-white);
+    color: var(--tesla-dark);
+    overflow: hidden; /* Main container handles scroll */
+}
+
+/* Header & Stepper */
+.tesla-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--tesla-orange);
+}
+
+.stepper {
+    display: flex;
+    gap: 25px;
+}
+
+.step {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.step.active {
+    opacity: 1;
+    color: var(--tesla-orange);
+}
+
+.step.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--tesla-orange);
+}
+
+/* Layout */
+.builder-container {
+    display: flex;
+    height: calc(100vh - 70px);
+}
+
+.form-side {
+    width: 450px;
+    padding: 40px;
+    overflow-y: auto;
+    border-right: 1px solid var(--border-color);
+    background: var(--grey-bg);
+}
+
+.preview-side {
+    flex-grow: 1;
+    padding: 40px;
+    background: #555;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+/* Form Styling */
+.step-content {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.step-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--tesla-orange);
+    box-shadow: 0 0 0 3px rgba(255, 95, 31, 0.1);
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Dynamic List Items */
+.dynamic-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ff4444;
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    background: none;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    border: 1px dashed var(--tesla-orange);
+    color: var(--tesla-orange);
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Template Grid */
+.template-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.template-card {
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.template-card.active {
+    border-color: var(--tesla-orange);
+}
+
+.template-thumb {
+    height: 120px;
+    background: #eee;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #999;
+}
+
+/* Navigation Buttons */
+.navigation-btns {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+button.primary {
+    background: var(--tesla-orange);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+}
+
+button.secondary {
+    background: #e0e0e0;
+    color: var(--tesla-dark);
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content h3 { margin-bottom: 15px; }
+.modal-content p { margin-bottom: 25px; color: #666; }
+
+.pay-btn-real {
+    background: #09a5db; /* Paystack Blue */
+    color: white; width: 100%; padding: 15px;
+    border-radius: 8px; border: none; font-weight: bold;
+    cursor: pointer; font-size: 16px;
+}
+
+.close-modal {
+    margin-top: 15px;
+    background: none; border: none; color: #888; cursor: pointer;
+}
+
+/* Resume A4 Container */
+#resume-preview {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    position: relative;
+    transform: scale(0.6);
+    transform-origin: top center;
+    padding: 0;
+}
+
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 80px;
+    color: rgba(0,0,0,0.04);
+    font-weight: 900;
+    pointer-events: none;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+    #resume-preview { transform: scale(0.5); }
+}
+
+@media (max-width: 900px) {
+    .builder-container { flex-direction: column; height: auto; }
+    .form-side { width: 100%; height: auto; }
+    .preview-side { height: 600px; }
+}

@@ -1,0 +1,341 @@
+
+
+
+
+/* =====================================
+   SKY RESUME / CV GLOBAL STYLES
+=====================================*/
+
+/* Colors */
+:root {
+    --primary-blue: #007BFF; /* Main blue color */
+    --secondary-white: #ffffff;
+    --accent-light: #E6F0FF;
+    --text-dark: #111111;
+    --text-light: #555555;
+    --shadow: rgba(0,0,0,0.1);
+    --cta-color: #FF5F1F; /* For buttons and highlights */
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--secondary-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--cta-color);
+}
+
+/* =====================================
+   HEADER / NAVBAR
+=====================================*/
+header.navbar,
+header.page-header {
+    width: 100%;
+    background: var(--secondary-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 10px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header.navbar .nav-logo {
+    font-weight: 800;
+    font-size: 28px;
+    color: var(--primary-blue);
+}
+
+header.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+header.navbar .nav-links a {
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+header.navbar .nav-links a:hover {
+    background: var(--accent-light);
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--accent-light);
+}
+
+.page-header h1 {
+    font-size: 36px;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: var(--text-light);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* =====================================
+   HERO SECTION (Home Page)
+=====================================*/
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+    background: var(--secondary-white);
+}
+
+.hero-video {
+    position: relative;
+    width: 50%;
+    min-width: 320px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,123,255,0.2);
+}
+
+.hero-content {
+    width: 45%;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 44px;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.start-btn {
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 600;
+    background: var(--cta-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    background: var(--primary-blue);
+    transform: translateY(-3px);
+}
+
+/* =====================================
+   MAIN SECTIONS
+=====================================*/
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Section Titles */
+.about-section h2,
+.faq-section h2 {
+    font-size: 28px;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-section h2::after,
+.faq-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--cta-color);
+    margin-top: 8px;
+    border-radius: 3px;
+}
+
+/* Paragraphs */
+.about-section p,
+.faq-section p,
+.about-main ul li,
+.faq-section ul li {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+/* Lists */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* CTA Links */
+.cta-link {
+    color: var(--cta-color);
+    font-weight: 600;
+}
+
+.cta-link:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   FAQ / HELP / COMMUNITY SECTIONS
+=====================================*/
+.faq-main,
+.help-main,
+.buzz-main {
+    padding: 40px 0;
+}
+
+.faq-section,
+.about-section {
+    margin-bottom: 50px;
+}
+
+.faq-section h3,
+.about-section h3 {
+    font-size: 20px;
+    color: var(--primary-blue);
+    margin-top: 20px;
+}
+
+.faq-section p,
+.about-section p {
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+/* =====================================
+   FOOTER
+=====================================*/
+.site-footer {
+    background: var(--primary-blue);
+    color: #fff;
+    padding: 40px 20px 20px 20px;
+}
+
+.site-footer a {
+    color: #fff;
+}
+
+.site-footer a:hover {
+    color: var(--cta-color);
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    margin-bottom: 20px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* =====================================
+   ANIMATIONS
+=====================================*/
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* =====================================
+   RESPONSIVE
+=====================================*/
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+    }
+    .hero-video, .hero-content {
+        width: 100%;
+    }
+    header.navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+    .start-btn {
+        width: 100%;
+        padding: 12px 0;
+    }
+}

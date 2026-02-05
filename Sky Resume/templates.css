@@ -1,0 +1,65 @@
+/* Template Shared Styles */
+.resume-body {
+    height: 100%;
+    padding: 50px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.section-title {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+/* Modern Template Styles */
+.modern-template .resume-header {
+    background: #171a20;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.modern-template h1 { font-size: 42px; text-transform: uppercase; letter-spacing: 4px; }
+.modern-template .subtitle { color: #FF5F1F; font-size: 18px; font-weight: 300; margin-top: 10px; }
+.modern-template .contact { margin-top: 20px; font-size: 14px; opacity: 0.8; }
+
+/* Corporate Template Styles */
+.corporate-template .resume-body { border-left: 20px solid #2c3e50; }
+.corporate-template .section-title { border-bottom: none; color: #2c3e50; font-size: 20px; }
+.corporate-template h1 { font-size: 36px; color: #2c3e50; }
+
+/* Creative Template Styles */
+.creative-template .resume-header { border-bottom: 15px solid #FF5F1F; padding: 40px; }
+.creative-template h1 { font-family: 'Poppins', sans-serif; font-weight: 800; color: #FF5F1F; }
+
+/* ATS Template Styles */
+.ats-template .resume-body { padding: 30px; font-family: Arial, sans-serif; }
+.ats-template .section-title { border-bottom: 1px solid #000; margin-top: 15px; }
+
+/* Lists Rendering */
+.xp-item, .edu-item { margin-bottom: 15px; }
+.xp-header, .edu-header { display: flex; justify-content: space-between; font-weight: bold; }
+.xp-place, .edu-place { font-style: italic; color: #666; }
+.xp-desc { font-size: 14px; margin-top: 5px; color: #444; }
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.skill-tag {
+    background: #f0f0f0;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+
+
